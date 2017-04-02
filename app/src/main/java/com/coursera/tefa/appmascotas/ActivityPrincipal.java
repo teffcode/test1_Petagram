@@ -1,9 +1,12 @@
 package com.coursera.tefa.appmascotas;
 
+import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 
 public class ActivityPrincipal extends AppCompatActivity {
 
@@ -33,6 +36,41 @@ public class ActivityPrincipal extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_opciones, menu);
+        getMenuInflater().inflate(R.menu.menu_opciones_contacto_acercade, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.Star:
+
+                Intent intent = new Intent(this, Activity_Secundaria.class);
+                startActivity(intent);
+
+                break;
+
+            case R.id.menuContacto:
+
+                Intent intent_1 = new Intent(this, ActivityMenuContacto.class);
+                startActivity(intent_1);
+
+                break;
+
+            case R.id.menuAcercaDe:
+
+                Intent intent_2 = new Intent(this, ScrollingActivityMenuAcercaDe.class);
+                startActivity(intent_2);
+
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
 
 }
