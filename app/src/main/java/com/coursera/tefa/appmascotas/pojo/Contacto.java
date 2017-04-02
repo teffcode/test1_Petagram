@@ -1,4 +1,4 @@
-package com.coursera.tefa.appmascotas;
+package com.coursera.tefa.appmascotas.pojo;
 
 /**
  * Created by user on 2/04/17.

@@ -1,3 +1,40 @@
 <resources>
-    <string name="app_name">AppMascotas</string>
+    <string name="app_name">Petagram</string>
+    <string name="nombre">Estefany Aguilar R</string>
+    <string name="telefono">555666</string>
+    <string name="email">estefany@gmail.com</string>
+    <string name="pnombre">Nombre</string>
+    <string name="ptelefono">Telefono</string>
+    <string name="pemail">Email</string>
+    <string name="search">Buscar</string>
+    <string name="settings">Settings</string>
+    <string name="likes">Likes</string>
+    <string name="menuContacto">Contacto</string>
+    <string name="menuAcercaDe">Acerca de</string>
+    <string name="input_nombre">Nombre (Asunto)</string>
+    <string name="input_correo">Correo</string>
+    <string name="input_mensaje">Mensaje</string>
+    <string name="Boton_menu_contacto">Enviar Comentario</string>
+    <string name="title_activity_scrolling_menu_acerca_de">Estefany, Android Developer</string>
+    <string name="MyBio">Estefany Aguilar Restrepo</string>
+    <string name="MyBio1">Estudiante de noveno semestre de Ingeniería de Telecomunicaciones
+        en la Universidad de Medellín.</string>
+    <string name="MyBio2">Nació en Antioquia el 1ro de febrero de 1994.</string>
+    <string name="MyBio3">Vivió 18 años en la ciudad de Bogotá y actualmente reside en la ciudad de Medellín.</string>
+    <string name="MyBio4">Vive con sus padres y su hermano menor.</string>
+    <string name="MyBio5">Trabaja en la Corporación Parque Explora desde octubre del 2014, un lugar de experiencias,
+        vivencias e historias. Para ella es un lugar de aprendizaje y una etapa inolvidable para su vida.
+
+    </string>
+
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="namePerfilFragment">Gidget</string>
+
+    <string name="Description">Description</string>
+
 </resources>
