@@ -32,7 +32,7 @@
             android:text="@string/namePerfilFragment"
             android:textSize="@dimen/nombre_contacto"
             android:textStyle="bold"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="@color/colorPrimaryDark"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rvPerfil"
