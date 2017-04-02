@@ -1,4 +1,4 @@
-package com.coursera.tefa.appmascotas;
+package com.coursera.tefa.appmascotas.adapter;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.coursera.tefa.appmascotas.R;
 import com.coursera.tefa.appmascotas.pojo.Contacto;
 
 import java.util.ArrayList;
