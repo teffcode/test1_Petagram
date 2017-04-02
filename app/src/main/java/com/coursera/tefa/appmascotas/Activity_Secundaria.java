@@ -25,9 +25,13 @@ public class Activity_Secundaria extends AppCompatActivity{
 
         Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar);
         setSupportActionBar(miActionBar);
-//        miActionBar.setLogo(R.drawable.footprint);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(miActionBar != null){
+            setSupportActionBar(miActionBar);
+            getSupportActionBar().setTitle("  "+"Petagram");
+            getSupportActionBar().setIcon(R.drawable.cat_footprint_52);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         listaContactos5 = (RecyclerView) findViewById(R.id.rvContactos5);
 

@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="@dimen/activity_vertical_margin"
     card_view:cardCornerRadius="@dimen/corner_radius_cardview"
+    android:padding="@dimen/activity_horizontal_margin"
     >
 
     <LinearLayout
@@ -78,7 +79,7 @@
                     android:text="@string/likes"
                     android:textSize="20dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginLeft="130dp"
+                    android:layout_marginLeft="80dp"
                     />
 
                 <ImageButton

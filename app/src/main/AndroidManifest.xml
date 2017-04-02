@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity_Secundaria" />
+        <activity android:name=".Activity_Secundaria"
+            android:parentActivityName=".ActivityPrincipal"/>
         <activity android:name=".menu.ActivityMenuContacto" />
         <activity
             android:name=".menu.ScrollingActivityMenuAcercaDe"
