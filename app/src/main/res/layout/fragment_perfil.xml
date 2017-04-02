@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.coursera.tefa.appmascotas.fragments.PerfilFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:layout_width="@dimen/size_perfil"
+            android:layout_height="@dimen/size_perfil"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_perfil"
+            app:civ_border_width="@dimen/width_perfil"
+            android:src="@drawable/perritu"
+            app:civ_border="true"
+            app:civ_border_color="@color/colorAccent"
+            app:civ_shadow="true"
+            app:civ_shadow_color="@color/colorAccent"
+            app:civ_shadow_radius="3" />
+
+        <TextView
+            android:id="@+id/NombrePerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/namePerfilFragment"
+            android:textSize="@dimen/nombre_contacto"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/activity_horizontal_margin" />
+    </LinearLayout>
+
+</FrameLayout>
