@@ -8,6 +8,65 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.coursera.tefa.appmascotas.ActivityMenuContacto">
+    tools:context="com.coursera.tefa.appmascotas.menu.ActivityMenuContacto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_edit_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/input_nombre"
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_edit_correo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_correo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/input_correo"
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_edit_mensaje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_mensaje"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/input_mensaje"
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/boton_enviar_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/BotonMenuContacto"
+            android:text="@string/Boton_menu_contacto"
+            />
+
+    </LinearLayout>
+
 
 </RelativeLayout>

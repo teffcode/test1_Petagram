@@ -16,9 +16,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity_Secundaria" />
-        <activity android:name=".ActivityMenuContacto" />
+        <activity android:name=".menu.ActivityMenuContacto" />
         <activity
-            android:name=".ScrollingActivityMenuAcercaDe"
+            android:name=".menu.ScrollingActivityMenuAcercaDe"
             android:label="@string/title_activity_scrolling_menu_acerca_de"
             android:theme="@style/AppTheme"></activity>
     </application>

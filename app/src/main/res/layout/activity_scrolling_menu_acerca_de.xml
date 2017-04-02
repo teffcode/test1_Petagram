@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.coursera.tefa.appmascotas.ScrollingActivityMenuAcercaDe">
+    tools:context="com.coursera.tefa.appmascotas.menu.ScrollingActivityMenuAcercaDe">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/app_bar_height"
+        android:layout_height="@dimen/app_bar_height"> <!-- dimen de la foto -->
         android:fitsSystemWindows="true"
         android:theme="@style/AppTheme.AppBarOverlay">
 
@@ -22,6 +22,16 @@
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
+            <ImageView
+                android:id="@+id/main.backdrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:fitsSystemWindows="true"
+                android:src="@drawable/teff"
+                app:layout_collapseMode="parallax"
+                />
+
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
@@ -30,9 +40,10 @@
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
+
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_scrolling_activity_menu_acerca_de" />
+    <include layout="@layout/content_scrolling_activity_menu_acercade" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -41,6 +52,6 @@
         android:layout_margin="@dimen/fab_margin"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        app:srcCompat="@drawable/android_os_48" />
 
 </android.support.design.widget.CoordinatorLayout>

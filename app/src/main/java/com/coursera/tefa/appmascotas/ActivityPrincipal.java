@@ -8,6 +8,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.coursera.tefa.appmascotas.R;
+import com.coursera.tefa.appmascotas.menu.ActivityMenuContacto;
+import com.coursera.tefa.appmascotas.menu.ScrollingActivityMenuAcercaDe;
+import com.coursera.tefa.appmascotas.Activity_Secundaria;
+
 public class ActivityPrincipal extends AppCompatActivity {
 
     /*ArrayList<Contacto> contactos;
