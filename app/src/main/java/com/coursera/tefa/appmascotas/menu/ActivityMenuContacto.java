@@ -1,89 +1,99 @@
 package com.coursera.tefa.appmascotas.menu;
 
-import android.os.StrictMode;
+import android.os.AsyncTask;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
 import com.coursera.tefa.appmascotas.R;
 
-import java.util.Properties;
-
-import javax.mail.Authenticator;
-import javax.mail.Message;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
+import javax.mail.AuthenticationFailedException;
+import javax.mail.MessagingException;
 
 public class ActivityMenuContacto extends AppCompatActivity {
 
-    Session session;
-    EditText input_nombre, input_correo, input_mensaje;
-    Button boton_enviar;
-    String nombre, correo, mensaje, contraseña;
+    private EditText user;
+    private EditText pass;
+    private EditText subject;
+    private EditText body;
+    private EditText recipient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_contacto);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        iniciar();
-
-        boton_enviar.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
+                sendMessage();
+            }
+        });
 
-                nombre = input_nombre.getText().toString();
-                correo = input_correo.getText().toString();
-                mensaje = input_mensaje.getText().toString();
+        user = (EditText) findViewById(R.id.input_name);
+        pass = (EditText) findViewById(R.id.input_password);
+        subject = (EditText) findViewById(R.id.input_subject);
+        body = (EditText) findViewById(R.id.input_body);
+        recipient = (EditText) findViewById(R.id.input_recipient);
+    }
 
-                StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-                StrictMode.setThreadPolicy(policy);
+    private void sendMessage() {
+        String[] recipients = { recipient.getText().toString() };
+        SendEmailAsyncTask email = new SendEmailAsyncTask();
+        email.activity = this;
+        email.m = new Mail(user.getText().toString(), pass.getText()
+                .toString());
+        email.m.set_from(user.getText().toString());
+        email.m.setBody(body.getText().toString());
+        email.m.set_to(recipients);
+        email.m.set_subject(subject.getText().toString());
+        email.execute();
+    }
 
-                Properties properties = new Properties();
-                properties.put("mail.smtp.host", "smtp.googlemail.com");
-                properties.put("mail.smtp.socketFactory.port", "465");
-                properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-                properties.put("mail.smtp.auth", "true");
-                properties.put("mail.smtp.port", "465");
+    public void displayMessage(String message) {
+        Snackbar.make(findViewById(R.id.fab), message, Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();
+    }
+}
 
-                try {
-                    session = Session.getDefaultInstance(properties, new Authenticator() {
-                        @Override
-                        protected PasswordAuthentication getPasswordAuthentication() {
-                            return new PasswordAuthentication(correo,contraseña);
-                        }
-                    });
+class SendEmailAsyncTask extends AsyncTask<Void, Void, Boolean> {
+    Mail m;
+    ActivityMenuContacto activity;
 
-                    if (session != null) {
-                        Message message = new MimeMessage(session);
-                        message.setFrom(new InternetAddress(correo));
-                        message.setSubject(nombre);
-                        message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("tefy.1@live.com"));
-                        message.setContent(mensaje, "text/html; charset=utf-8");
-                        Transport.send(message);
-                    }
+    public SendEmailAsyncTask() {}
 
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
+    @Override
+    protected Boolean doInBackground(Void... params) {
+        try {
+            if (m.send()) {
+                activity.displayMessage("Email sent.");
+            } else {
+                activity.displayMessage("Email failed to send.");
             }
 
-
-        });
+            return true;
+        } catch (AuthenticationFailedException e) {
+            Log.e(SendEmailAsyncTask.class.getName(), "Bad account details");
+            e.printStackTrace();
+            activity.displayMessage("Authentication failed.");
+            return false;
+        } catch (MessagingException e) {
+            Log.e(SendEmailAsyncTask.class.getName(), "Email failed");
+            e.printStackTrace();
+            activity.displayMessage("Email failed to send.");
+            return false;
+        } catch (Exception e) {
+            e.printStackTrace();
+            activity.displayMessage("Unexpected error occured.");
+            return false;
+        }
     }
-
-    public void iniciar() {
-        input_nombre = (EditText) findViewById(R.id.input_nombre);
-        input_correo = (EditText) findViewById(R.id.input_correo);
-        input_mensaje = (EditText) findViewById(R.id.input_mensaje);
-        boton_enviar = (Button) findViewById(R.id.boton_enviar_email);
-    }
-
 }

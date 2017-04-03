@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_menu_contacto"
     android:layout_width="match_parent"
@@ -10,63 +10,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.coursera.tefa.appmascotas.menu.ActivityMenuContacto">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <!--prub-->
+
+    <include layout="@layout/content_mail" />
+
+    <android.support.design.widget.FloatingActionButton android:id="@+id/fab"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_gravity="bottom|right|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_dialog_email"
+        />
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_edit_nombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/input_nombre"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/input_nombre"
-                />
-
-        </android.support.design.widget.TextInputLayout>
-
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_edit_correo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/input_correo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/input_correo"
-                />
-
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_edit_mensaje"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/input_mensaje"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/input_mensaje"
-                />
-
-        </android.support.design.widget.TextInputLayout>
-
-        <Button
-            android:id="@+id/boton_enviar_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/BotonMenuContacto"
-            android:text="@string/Boton_menu_contacto"
-            />
-
-    </LinearLayout>
-
-
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

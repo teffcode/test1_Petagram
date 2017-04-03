@@ -11,9 +11,13 @@
     <string name="likes">Likes</string>
     <string name="menuContacto">Contacto</string>
     <string name="menuAcercaDe">Acerca de</string>
-    <string name="input_nombre">Nombre (Asunto)</string>
-    <string name="input_correo">Correo</string>
-    <string name="input_mensaje">Mensaje</string>
+
+    <string name="input_name">Gmail</string>
+    <string name="input_password">Password</string>
+    <string name="input_subject">Subject</string>
+    <string name="input_body">Body</string>
+    <string name="input_recipient">To</string>
+
     <string name="Boton_menu_contacto">Enviar Comentario</string>
     <string name="title_activity_scrolling_menu_acerca_de">Estefany, Android Developer</string>
     <string name="MyBio">Estefany Aguilar Restrepo</string>
